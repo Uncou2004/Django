@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Local Library</title>{% endblock %}
+
+{% block content %}
+<h1>Local Library - Главная</h1>
+
+<p>Добро пожаловать на скайт нашей библиотеки <em>LocalLibrary</em>.</p>
+
+<h2>Динамический контент</h2>
+
+<p>В библиотеке имеется следующее количество записей:</p>
+<ul>
+    <li><strong>Книги:</strong> {{ num_books }}</li>
+    <li><strong>Копии:</strong> {{ num_instances }}</li>
+    <li><strong>Доступные копии:</strong> {{ num_instances_available }}</li>
+    <li><strong>Авторы:</strong> {{ num_authors }}</li>
+    <li><strong>Жанры:</strong> {{ num_genres }}</li>
+    <li><strong>Книги с данным словом:</strong> {{ num_books_with_word }}</li>
+    <li><strong>Слово поиска:</strong> {{ search_word }}</li>
+</ul>
+
+<p>
+  Вы посетили эту страницу {{ num_visits }}{% if num_visits == 1 %} раз {% else %} раз{% endif %}.
+</p>
+
+{% endblock %}
